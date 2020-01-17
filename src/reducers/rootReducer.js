@@ -21,6 +21,16 @@ const rootReducer = (state = initState, action) => {
           totalOrder: state.totalOrder - 1
         }
       }
+
+    case 'DELETE_POST':
+      let newPosts = state.posts.filter(post => {
+        return post.id !== action.id
+      })
+
+      return {
+        ...state,
+        posts: newPosts
+      }
       
     default:
       return state;
