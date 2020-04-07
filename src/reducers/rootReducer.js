@@ -20,6 +20,8 @@ const rootReducer = (state = initState, action) => {
           ...state,
           totalOrder: state.totalOrder - 1
         }
+      } else {
+        return state
       }
 
     case 'DELETE_POST':

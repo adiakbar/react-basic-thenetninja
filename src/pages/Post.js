@@ -51,7 +51,7 @@ const mapStateToProps = (state, ownProps) => {
   
   return {
     post: state.posts.find((post) => {
-      return post.id == id
+      return post.id === id
     })
   }
 }
