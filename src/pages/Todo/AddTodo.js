@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 
 class AddTodo extends Component {
 
+  /* Cara lama inisiasi state
+  constructor() {
+    super()
+
+    this.state = {
+      content: ''
+    }
+  }
+  */
+
   state = {
     content: ''
   }
@@ -12,7 +22,7 @@ class AddTodo extends Component {
     })
   }
 
-  handelSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTodo(this.state);
     this.setState({
@@ -23,7 +33,7 @@ class AddTodo extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handelSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>Add New Todo:</label>
           <input type="text" onChange={this.handleChange} value={this.state.content} />
         </form>
